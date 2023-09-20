@@ -12,6 +12,7 @@ type DataType = {
     }
 }
 
+console.log("Beginning build process...")
 export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions }) => {
     const { createPage } = actions
 
@@ -29,6 +30,7 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions 
     const pageTemplate = path.resolve("src/templates/DynamicPage.tsx")
 
     const createPagePromise = pageQuery.data?.allContentfulPage.nodes.map((node) => {
+        console.log("Attempting to build page...")
         createPage({
             path: `/blog/${node.urlSlug}`,
             component: pageTemplate,
@@ -40,3 +42,4 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions 
 
     await Promise.all([createPagePromise])
 }
+console.log("Finished build process!")
