@@ -17,5 +17,5 @@ module.exports = {
       "accessToken": process.env.CTFL_ACCESS_TOKEN,
       "spaceId": process.env.CTFL_SPACE_ID
     }
-  }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-postcss",]
+  }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-plugin-postcss",]
 };
