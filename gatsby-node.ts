@@ -29,7 +29,6 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions 
     const pageTemplate = path.resolve("src/templates/DynamicPage.tsx")
 
     const createPagePromise = pageQuery.data?.allContentfulPage.nodes.map((node) => {
-        console.log("TEST")
         createPage({
             path: `/blog/${node.urlSlug}`,
             component: pageTemplate,
