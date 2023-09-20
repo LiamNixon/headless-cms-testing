@@ -3,7 +3,9 @@ logs
 *.log
 
 # Environment variables
-
+.env
+.env.development
+.env.production
 
 # Runtime data
 pids
