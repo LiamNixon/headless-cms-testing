@@ -23,7 +23,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         return
     }
 
-    const DynamicPage = path.resolve("src/templates/DynamicPage.js")
+    const DynamicPage = path.resolve("src/templates/DynamicPage.jsx")
     result.data.allContentfulPage.edges.forEach(({ node }) => {
         createPage({
             path: `/blog/${node.urlSlug}`,

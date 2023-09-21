@@ -3,19 +3,28 @@
  */
 
 require("dotenv").config({
-  path: ".env"
-})
+  path: ".env",
+});
 
 module.exports = {
   siteMetadata: {
     title: `CTFL Testing`,
-    siteUrl: `https://www.yourdomain.tld`
+    description: "Testing Gatsby and Contentful integrations",
+    twitterUsername: "none",
+    image: "none",
+    siteUrl: `https://www.yourdomain.tld`,
   },
-  plugins: [{
-    resolve: 'gatsby-source-contentful',
-    options: {
-      "accessToken": process.env.CTFL_ACCESS_TOKEN,
-      "spaceId": process.env.CTFL_SPACE_ID
-    }
-  }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-postcss"]
+  plugins: [
+    {
+      resolve: "gatsby-source-contentful",
+      options: {
+        accessToken: process.env.CTFL_ACCESS_TOKEN,
+        spaceId: process.env.CTFL_SPACE_ID,
+      },
+    },
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-postcss",
+  ],
 };
